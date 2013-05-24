@@ -31,4 +31,4 @@ The options that may be passed can be found on the Meetup API documentation. Ple
 
 == Credit
 
-Credit goes to Jared Pace for building the initial iteration of this gem. I just forked it, merged another branch and updated to 2.0.
+Credit goes to Jared Pace for building the initial iteration of this gem. I just forked it, merged another branch, and updated to 2.0.
