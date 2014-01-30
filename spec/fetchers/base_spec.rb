@@ -9,7 +9,7 @@ describe RMeetup::Fetcher::Base, 'building an api url' do
   it 'should build a correct to call.' do
     @options['search'] = 'ruby search'
     url = @fetcher.send(:build_url,@options)
-    url.should eql("http://api.meetup.com/.json/?key=seekret_api_key&search=ruby%20search")
+    url.should eql("http://api.meetup.com/.json/?search=ruby%20search&key=seekret_api_key")
   end
   
   it 'should generate a correct base url' do
@@ -25,7 +25,7 @@ describe RMeetup::Fetcher::Base, 'building an api url' do
   it 'should build a correct query string' do
     @options[:search] = 'ruby'
     params = @fetcher.send(:params_for, @options)
-    params.should eql('?key=seekret_api_key&search=ruby')
+    params.should eql('?search=ruby&key=seekret_api_key')
   end
 end
 
