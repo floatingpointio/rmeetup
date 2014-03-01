@@ -1,6 +1,6 @@
 = rMeetup
 
-A simple Ruby gem to access the Meetup API v2
+A Ruby wrapper for the Meetup REST API v2.
 
 == Code Sample
 
@@ -47,4 +47,4 @@ The options that may be passed can be found on the Meetup API documentation. Ple
 [Tommy Chan](https://github.com/tommytcchan/rmeetup) - added venues, updated to api v2.0
 [Tanner Mares](https://github.com/tannermares/rmeetup) - check for type in base_url, fix event time and venue, also updated to api v2.0
 [Joshua Calloway](https://github.com/joshuacalloway/rmeetup) - added post functionality and event comment creation
-[Zishan Ahmad](https://github.com/zishan/rmeetup) - refactored for completeness, and modeled after [github_api](https://github.com/peter-murach/github)
+[Zishan Ahmad](https://github.com/zishan/rmeetup) - consolidated changes, updated docs
