@@ -1,6 +1,6 @@
 = rMeetup
 
-A simple Ruby gem to access the Meetup API.
+A simple Ruby gem to access the Meetup API. (Supports new 2.0 API)
 
 == Code Sample
 
@@ -23,7 +23,7 @@ RMeetup::Client.fetch takes a data model type and set of options as arguments. P
 * :comments
 * :photos
  
-The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /events" at http://www.meetup.com/meetup_api/docs/events/).
+The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /events" at http://www.meetup.com/meetup_api/docs/2/events/).
 
 == Installation
 
@@ -31,4 +31,4 @@ The options that may be passed can be found on the Meetup API documentation. Ple
 
 == Credit
 
-Credit goes to Jared Pace for building the initial iteration of this gem. I just forked it, expanded and documented it a but.
+Credit goes to Jared Pace for building the initial iteration of this gem. I just forked it, merged another branch, and updated to 2.0.
