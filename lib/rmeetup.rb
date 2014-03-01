@@ -5,6 +5,7 @@ require 'json'
 require 'rmeetup/type'
 require 'rmeetup/collection'
 require 'rmeetup/fetcher'
+require 'rmeetup/poster'
 
 module RMeetup
   
@@ -29,6 +30,7 @@ module RMeetup
   class Client
     FETCH_TYPES = [:topics, :cities, :members, :rsvps, :events, :groups, :comments, :photos, :venues]
     
+    POST_TYPES = [:event_comment]
     # Meetup API Key
     # Get one at http://www.meetup.com/meetup_api/key/
     # Needs to be the group organizers API Key
@@ -52,7 +54,18 @@ module RMeetup
         raise InvalidRequestTypeError.new(type)
       end
     end
-    
+
+    def self.post(type, options = {})
+      check_configuration!
+      options = default_options.merge(options)
+      
+      if POST_TYPES.include?(type.to_sym)
+        poster = RMeetup::Poster.for(type)
+        return poster.post(options)
+      else
+        raise InvalidRequestTypeError.new(type)
+      end
+    end
     protected
       def self.default_options
         {
