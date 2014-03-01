@@ -25,7 +25,7 @@ describe RMeetup::Fetcher::Base, 'building an api url' do
   it 'should build a correct query string' do
     @options[:search] = 'ruby'
     params = @fetcher.send(:params_for, @options)
-    params.should eql('?search=ruby&key=seekret_api_key')
+    params.should eql('?key=seekret_api_key&search=ruby')
   end
 end
 
