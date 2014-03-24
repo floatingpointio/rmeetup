@@ -61,4 +61,4 @@ Credits
 * [Tanner Mares](https://github.com/tannermares/rmeetup) - check for type in base_url, fix event time and venue, also updated to api v2.0
 * [Joshua Calloway](https://github.com/joshuacalloway/rmeetup) - added post functionality and event comment creation
 * [Zishan Ahmad](https://github.com/zishan/rmeetup) - consolidated changes, updated docs
-* [Nikica Jokić](https://github.com/neektza/rmeetup) - streaming, config for TravisCI, CodeClimate, Coveralls, other config updates.
+* [Nikica Jokić](https://github.com/neektza/rmeetup) - support for streaming API, config for TravisCI, CodeClimate, Coveralls, other updates.
