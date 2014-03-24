@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'json'
-gem 'rspec'
-gem 'echoe'
+group :development do
+  gem 'pry'
+end
+
+group :test do
+  gem 'coveralls', :require => false
+  gem 'simplecov', :require => false
+  gem 'rspec'
+end
+
+gemspec
