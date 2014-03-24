@@ -1,8 +1,10 @@
-= rMeetup
+rmeetup
+=======
 
 A Ruby wrapper for the Meetup REST API v2.
 
-== Code Sample
+Code Sample
+-----------
 
 Sample code is worth a thousand words:
 
@@ -12,7 +14,8 @@ Sample code is worth a thousand words:
     # Do something with the result
   end
 
-== Fetch
+Fetch
+-----
 
 RMeetup::Client.fetch takes a data model type and set of options as arguments. Possible data models are:
 
@@ -28,7 +31,8 @@ RMeetup::Client.fetch takes a data model type and set of options as arguments. P
 
 The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /2/events" at http://www.meetup.com/meetup_api/docs/2/events/).
 
-== Post
+Post
+----
 
 RMeetup::Client.poster takes a data model type and set of options as arguments. Possible data models are:
 
@@ -36,11 +40,15 @@ RMeetup::Client.poster takes a data model type and set of options as arguments. 
 
 The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event_comment, look at the API call "POST /2/event_comment" at http://www.meetup.com/meetup_api/docs/2/event_comment/).
 
-== Installation
+Installation
+------------
 
-  gem install rMeetup
+```
+gem install rMeetup
+```
 
-== Credit
+Credit
+------
 
 [Jared Pace](https://github.com/jdpace/rmeetup) - built initial iteration
 [Jason Berlinsky](https://github.com/Jberlinsky/rmeetup) - forked, expanded, documented for api v1.0
