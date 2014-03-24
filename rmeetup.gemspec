@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.name        = "rmeetup"
   spec.authors     = ["Jared Pace", "Jason Berlinsky", "Tommy Chan", "Tanner Mares", "Zishan Ahmad", "Nikica Jokić"]
   spec.email       = ["jdpace@github.com", "jason@jasonberlinsky.com", "tommytcchan@gmail.com", "tannermares@gmail.com", "me@zishanahmad.com", "neektza@gmail.com"]
-  spec.homepage    = "https://rubygems.org/gems/rMeetup"
+  spec.homepage    = "https://rubygems.org/gems/rmeetup"
   spec.summary     = "A Ruby wrapper for the Meetup REST API v2"
 
   spec.required_rubygems_version = ">= 1.3.6"
