@@ -1,6 +1,8 @@
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
-require 'rmeetup'
+require 'coveralls'
+Coveralls.wear!
 
+require 'rmeetup'
 TEST_ROOT = File.dirname(__FILE__)
 
 # Meetup API Key
