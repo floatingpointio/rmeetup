@@ -2,6 +2,7 @@ rmeetup
 =======
 [![Code Climate](https://codeclimate.com/github/neektza/rmeetup.png)](https://codeclimate.com/github/neektza/rmeetup)
 [![Build Status](https://travis-ci.org/neektza/rmeetup.svg?branch=master)](https://travis-ci.org/neektza/rmeetup)
+[![Coverage Status](https://coveralls.io/repos/neektza/rmeetup/badge.png)](https://coveralls.io/r/neektza/rmeetup)
 
 A Ruby wrapper for the Meetup REST API v2.
 
