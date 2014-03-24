@@ -11,11 +11,13 @@ Code Sample
 
 Sample code is worth a thousand words:
 
+```ruby
   RMeetup::Client.api_key = "API_KEY"
   results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"})
   results.each do |result|
     # Do something with the result
   end
+```
 
 Fetch
 -----
