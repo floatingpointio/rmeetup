@@ -16,7 +16,7 @@ module RMeetup
 
     def self.for(type)
       if (type && fetcher = const_get(type.to_s.camel_case.to_sym))
-        fetcher
+        fetcher.new
       end 
     end
 
