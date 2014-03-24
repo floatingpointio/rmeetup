@@ -28,7 +28,7 @@ module RMeetup
   # different fetcher classes who are responsible for fetching
   # and parsing their own responses.
   class Client
-    FETCH_TYPES = [:topics, :cities, :members, :rsvps, :events, :groups, :comments, :photos, :venues]
+    FETCH_TYPES = [:topics, :cities, :members, :rsvps, :events, :groups, :comments, :photos, :venues, :open_events]
     
     POST_TYPES = [:event_comment]
     # Meetup API Key
