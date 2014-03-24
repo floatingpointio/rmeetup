@@ -44,7 +44,7 @@ RMeetup::Client.poster takes a data model type and set of options as arguments. 
 
 * :event_comment
 
-The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event_comment, look at the API call "POST /2/event_comment" at http://www.meetup.com/meetup_api/docs/2/event_comment/).
+The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event_comment, look at the API call ```POST /2/event_comment``` at ```http://www.meetup.com/meetup_api/docs/2/event_comment```).
 
 Installation
 ------------
