@@ -3,7 +3,7 @@ lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
-  s.name        = "rMeetup"
+  s.name        = "rmeetup"
   s.version     = "1.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jared Pace", "Jason Berlinsky", "Tommy Chan", "Tanner Mares", "Zishan Ahmad"]
