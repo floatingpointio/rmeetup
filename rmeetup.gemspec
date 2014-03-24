@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.required_rubygems_version = ">= 1.3.6"
 
   spec.add_dependency 'json'
-  specpec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'bundler'
 
   spec.files = %w[LICENSE.md README.md Rakefile rmeetup.gemspec]
   spec.files += Dir.glob('lib/**/*.rb')

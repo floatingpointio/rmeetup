@@ -1,4 +1,4 @@
-module Twitter
+module RMeetup
   class Version
     MAJOR = 1
     MINOR = 1
