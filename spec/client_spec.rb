@@ -1,35 +1,31 @@
 require 'spec_helper'
 
-describe RMeetup::Client, 'trying to access the API before being configured' do
-  it 'should throw an error trying to search' do
-    lambda {
-      RMeetup::Client.fetch(:topics)
-    }.should raise_error(RMeetup::NotConfiguredError)
-  end
-end
+describe RMeetup::Client do
 
-describe RMeetup::Client, 'trying to fetch an unknown type' do
-  before do
-    RMeetup::Client.api_key = API_KEY
+  context 'trying to initialize a Client without providing an API key' do
+    it 'should throw an error trying to search' do
+      expect { RMeetup::Client.new }.to raise_error(RMeetup::Error::NotConfiguredError)
+    end
   end
-  
-  it 'should throw an error' do
-    lambda {
-      RMeetup::Client.fetch(:clowns)
-    }.should raise_error(RMeetup::InvalidRequestTypeError)
-  end
-end
 
-describe RMeetup::Client, 'fetching some topics' do
-  before do
-    RMeetup::Client.api_key = API_KEY
-    @topics_fetcher = mock(RMeetup::Fetcher::Topics)
-    @topics_fetcher.stub!(:fetch).and_return([])
-    @type = :topics
+  describe "#fetch" do
+    before do
+      @topics_fetcher = double(RMeetup::Fetcher::Topics)
+      @topics_fetcher.stub(:fetch).and_return([])
+    end
+
+    let (:client) do
+      RMeetup::Client.new {|c| c.api_key = API_KEY}
+    end
+
+    it 'should delegate to appropriate Fetcher' do
+      expect(RMeetup::Fetcher).to receive(:for)
+      client.fetch(:venues)
+    end
+
+    # it 'should throw an error if invalid data type is requested' do
+    #   expect { client.fetch(:clowns) }.to raise_error(RMeetup::InvalidRequestTypeError)
+    # end
   end
-  
-  it 'should try to get a Topic Fetcher' do
-    RMeetup::Fetcher.should_receive(:for).with(@type).and_return(@topics_fetcher)
-    RMeetup::Client.fetch(@type,{})
-  end
+
 end

@@ -3,15 +3,15 @@ require "rmeetup/poster/event_comment"
 
 module RMeetup
   module Poster
-    
-    class << self
-      # Return a fetcher for given type
-      def for(type)
-        return  case type.to_sym
-                when :event_comment
-                  EventComment.new
-                end
-      end 
-    end
+
+    def self.for(type)
+      name = type.to_s.camel_case.to_sym
+      if (name && constants.include?(name))
+        const_get(name).new
+      else
+        raise InvalidRequestTypeError.new(type)
+      end
+    end 
+
   end
 end
