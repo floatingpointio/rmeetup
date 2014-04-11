@@ -1,14 +1,8 @@
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-Echoe.new('rMeetup','1.1') do |p|
-  p.description = "A Ruby wrapper for the Meetup REST API v2"
-  p.url         = "https://github.com/zishan/rmeetup"
-  p.author      = "Zishan Ahmad"
-  p.email       = "me@zishanahmad.com"
-  p.ignore_pattern  = ["tmp/*", "script/*"]
-  p.development_dependencies  = []
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
+task :test => :spec
 
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
+task :default => [:spec]
