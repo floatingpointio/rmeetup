@@ -27,13 +27,12 @@ module RMeetup
       # neccessary options are passed
       # for the request.
       def fetch(options = {})
-        url = build_url(options)
-
-        json = get_response(url)
+        path = path_and_query(options)
+        json = get_response(path)
         data = JSON.parse(json)
 
         # Check to see if the api returned an error
-        raise ApiError.new(data['details'],url) if data.has_key?('problem')
+        raise ApiError.new(data['details'],path) if data.has_key?('problem')
 
         collection = RMeetup::Collection.build(data)
 
@@ -50,36 +49,24 @@ module RMeetup
           result
         end
 
-        def build_url(options)
-          options = encode_options(options)
-
-          base_url + params_for(options)
+        def path_and_query(options)
+          base_path + params_for(options)
         end
 
-        def base_url
-          url = "http://api.meetup.com/2/"
-          url += "#{@type}/" unless @type.nil?
-          url
+        def base_path
+          "/2/#{@type}/" unless @type.nil?
         end
 
         # Create a query string from an options hash
         def params_for(options)
-          params = []
-          options.each do |key, value|
-            params << "#{key}=#{value}"
-          end
-          "?#{params.join("&")}"
+          '?' + URI.encode_www_form(options)
         end
 
-        # Encode a hash of options to be used as request parameters
-        def encode_options(options)
-          options.each do |key,value|
-            options[key] = URI.encode(value.to_s)
-          end
-        end
+        def get_response(path)
+          http = Net::HTTP.new "api.meetup.com", 443
+          http.use_ssl = true
 
-        def get_response(url)
-          Net::HTTP.get_response(URI.parse(url)).body || raise(NoResponseError.new)
+          http.get(path).body || raise(NoResponseError.new)
         end
     end
   end
