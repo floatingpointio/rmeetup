@@ -8,33 +8,39 @@ module RMeetup
     # as progammatically fetch relative data types
     # based on this event.
 
-    # Edited by Jason Berlinsky on 1/20/11 to allow for arbitrary data access
-    # See http://www.meetup.com/meetup_api/docs/events/ for available fields
-
     class Event
 
       attr_accessor :event
 
       def initialize(event = {})
-        self.event = event
+        @event = event
+      end
+      attr_reader :event
+
+      def to_h
+        event
       end
 
       def method_missing(id, *args)
-        return self.event[id.id2name]
+        if event.has_key?(id.id2name)
+          event[id.id2name]
+        else
+          fail NoMethodError.new('no method')
+        end
       end
 
       # Special accessors that need typecasting or other parsing
       def id
-        self.event['id'].to_i
+        event['id'].to_i
       end
       def lat
-        self.event['lat'].to_f
+        event['lat'].to_f
       end
       def lon
-        self.event['lon'].to_f
+        event['lon'].to_f
       end
       def rsvpcount
-        self.event['rsvpcount'].to_i
+        event['rsvpcount'].to_i
       end
       def updated
         DateTime.parse(self.event['updated'])
