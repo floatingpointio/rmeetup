@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rmeetup (2.0.0)
+    rMeetup (2.0.0)
       buftok (~> 0.2)
       http (~> 0.6)
       http_parser.rb (~> 0.6)
@@ -90,8 +90,8 @@ DEPENDENCIES
   guard
   guard-rspec
   pry
+  rMeetup!
   rake
-  rmeetup!
   rspec (~> 2.14)
   rspec-mocks
   simplecov
