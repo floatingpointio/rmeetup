@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/neektza/rmeetup.png?label=ready&title=Ready)](https://waffle.io/neektza/rmeetup)
+[![Stories in Ready](https://badge.waffle.io/neektza/rmeetup.png?label=ready&title=Ready)](https://waffle.io/neektza/rmeetup)
 rmeetup
 =======
 [![Build Status](https://travis-ci.org/neektza/rmeetup.svg?branch=master)](https://travis-ci.org/neektza/rmeetup)
