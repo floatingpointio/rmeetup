@@ -1,2 +1,8 @@
 .DS_Store
+*.gem
 pkg/
+coverage/
+doc/
+tmp/
+.bundle/
+.yardoc/
