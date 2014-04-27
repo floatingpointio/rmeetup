@@ -55,6 +55,9 @@ module RMeetup
       @configuration ||= Configuration.new
     end
 
+    # Construct authorization part of the query. Preferes :api_key over :access_token
+    #
+    # @return [Hash] Authorization part of the query.
     def auth
       if configuration.api_key
         { :key => configuration.api_key, :sign => 'true' }
