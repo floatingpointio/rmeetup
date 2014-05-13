@@ -12,14 +12,18 @@ module RMeetup
     # See http://www.meetup.com/meetup_api/docs/ew/rsvps/ for available fields
     
     class Rsvp
-      attr_accessor :rsvp
-      
       def initialize(rsvp = {})
-        self.rsvp = rsvp
+        @rsvp = rsvp
       end
+      attr_accessor :rsvp
+      alias_method :to_h, :rsvp
       
       def method_missing(id, *args)
-        return self.rsvp[id.id2name]
+        if rsvp.has_key?(id.id2name)
+          rsvp[id.id2name]
+        else
+          fail NoMethodError.new('no method')
+        end
       end
       
       # Special accessors that need typecasting or other parsing

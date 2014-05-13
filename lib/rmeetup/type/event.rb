@@ -9,17 +9,11 @@ module RMeetup
     # based on this event.
 
     class Event
-
-      attr_accessor :event
-
       def initialize(event = {})
         @event = event
       end
       attr_reader :event
-
-      def to_h
-        event
-      end
+      alias_method :to_h, :event
 
       def method_missing(id, *args)
         if event.has_key?(id.id2name)
