@@ -12,7 +12,9 @@ end
 group :test do
   gem 'coveralls', :require => false
   gem 'simplecov', :require => false
-  gem 'rspec', '~> 2.14'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rspec'
   gem 'rspec-mocks'
 end
 
