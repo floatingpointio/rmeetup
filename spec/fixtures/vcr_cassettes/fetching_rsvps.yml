@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.meetup.com/2/rsvps?event_id=1342342&key=663a24605a37767831495d6332546b4a&sign=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 19:55:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0d36ac5f1ed5efd0503141fac0e86ffe1415044521603; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.meetup.com; HttpOnly
+      X-Meetup-Server:
+      - api14.int.meetup.com
+      X-Meetup-Request-Id:
+      - 50284d1d-ec14-4777-a06a-318aa12b3361
+      X-Oauth-Scopes:
+      - basic
+      X-Accepted-Oauth-Scopes:
+      - basic
+      Etag:
+      - W/"b63541d4372c98b7211a4bcf237bcc84"
+      Vary:
+      - Accept-Encoding,User-Agent
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 183b2104029e0a2a-VIE
+    body:
+      encoding: UTF-8
+      string: |
+        {"results":[],"meta":{"lon":"","count":0,"signed_url":"http:\/\/api.meetup.com\/2\/rsvps?event_id=1342342&order=event&desc=false&offset=0&format=json&page=200&fields=&sig_id=90485442&sig=f603ae87c19dd5b439f1576623b9fd3ee0c66e59","link":"http:\/\/api.meetup.com\/2\/rsvps","next":"","total_count":0,"url":"http:\/\/api.meetup.com\/2\/rsvps?key=663a24605a37767831495d6332546b4a&event_id=1342342&order=event&desc=false&offset=0&format=json&page=200&fields=&sign=True","id":"","title":"Meetup RSVPs v2","updated":1415044523363,"description":"Query for Event RSVPs by event","method":"RSVPs v2","lat":""}}
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 19:55:24 GMT
+recorded_with: VCR 2.9.3

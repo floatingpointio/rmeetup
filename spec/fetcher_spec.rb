@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe RMeetup::Fetcher, 'being told to get a certain type of fetcher' do
   before do
-    @fetcher_types = %w(topics cities members rsvps events groups comments photos open_events)
+    @fetcher_types = %w(cities members rsvps events groups photos open_events)
   end
   
   it 'should return the correct fetcher' do

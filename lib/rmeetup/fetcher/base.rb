@@ -27,6 +27,7 @@ module RMeetup
       # @param [Hash] Options for deciding what and how to fetch
       # @return [RMeetup::Collection] Collection of appropriate entities
       def fetch(options = {})
+        raise NotConfiguredError, /fetches only possible with a concrete fetcher/ if @type.nil?
         path = path_and_query(options)
 
         # Fetch and parse data from Meetup
@@ -47,11 +48,7 @@ module RMeetup
       end
 
       def base_path
-        if @type.nil?
-          raise NotConfiguredError, /fetches only possible with a concrete fetcher, not with Base/
-        else
-          "/2/#{@type}"
-        end
+        "/2/#{@type}"
       end
 
       # Create a query string from an options hash

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.meetup.com/2/events?group_id=95875&key=663a24605a37767831495d6332546b4a&sign=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 19:55:14 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4b5ba027deaa380e25b6b1312cf06ae71415044512749; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.meetup.com; HttpOnly
+      X-Meetup-Server:
+      - api12.int.meetup.com
+      X-Meetup-Request-Id:
+      - f9e193d8-34b0-4902-afc5-52c38f8fd897
+      X-Oauth-Scopes:
+      - basic
+      X-Accepted-Oauth-Scopes:
+      - basic
+      Etag:
+      - W/"b8112a17f19cf649a76650af05fdca1a"
+      Vary:
+      - Accept-Encoding,User-Agent
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 183b20cca8590a2a-VIE
+    body:
+      encoding: UTF-8
+      string: |
+        {"results":[],"meta":{"lon":"","count":0,"signed_url":"http:\/\/api.meetup.com\/2\/events?group_id=95875&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=200&fields=&sig_id=90485442&sig=64509e415e86853557bfddeab8ac729ac0ad576e","link":"http:\/\/api.meetup.com\/2\/events","next":"","total_count":0,"url":"http:\/\/api.meetup.com\/2\/events?key=663a24605a37767831495d6332546b4a&group_id=95875&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=200&fields=&sign=True","id":"","title":"Meetup Events v2","updated":1415044514200,"description":"Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](\/meetup_api\/docs\/2\/open_events).","method":"Events","lat":""}}
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 19:55:14 GMT
+recorded_with: VCR 2.9.3
