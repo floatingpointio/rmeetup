@@ -4,5 +4,6 @@ pkg/
 coverage/
 doc/
 tmp/
+spec/fixtures/
 .bundle/
 .yardoc/
