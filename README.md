@@ -1,9 +1,10 @@
 rMeetup
 =======
+[![Gem Version](https://badge.fury.io/rb/rMeetup.svg)](http://badge.fury.io/rb/rMeetup)
 [![Build Status](https://travis-ci.org/neektza/rmeetup.svg?branch=master)](https://travis-ci.org/neektza/rmeetup)
 [![Code Climate](https://codeclimate.com/github/neektza/rmeetup.png)](https://codeclimate.com/github/neektza/rmeetup)
 [![Coverage Status](https://coveralls.io/repos/neektza/rmeetup/badge.png?branch=master)](https://coveralls.io/r/neektza/rmeetup?branch=master)
-[![Stories in Ready](https://badge.waffle.io/neektza/rmeetup.png?label=ready&title=Ready)](https://waffle.io/neektza/rmeetup)
+[![Inline docs](http://inch-ci.org/github/neektza/rmeetup.svg?branch=master)](http://inch-ci.org/github/neektza/rmeetup)
 
 A Ruby wrapper for the Meetup REST API v2.
 
