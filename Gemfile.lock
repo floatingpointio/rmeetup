@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rMeetup (2.0.0)
+    rMeetup (2.0.1)
       buftok (~> 0.2)
       http (~> 0.6)
       http_parser.rb (~> 0.6)
@@ -39,7 +39,7 @@ GEM
     guard-rspec (4.2.8)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    http (0.6.0)
+    http (0.6.2)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
     json (1.8.1)
