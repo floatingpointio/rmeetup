@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'yard'
+gem 'markup'
 
 group :development do
   gem 'pry'

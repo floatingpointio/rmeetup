@@ -24,8 +24,8 @@ module RMeetup
   class Client
     # Initializes a new Client object
     #
-    # @param type [Hash] Options, currenlty only for providing clinet with the auth data
-    # @yield type [Configuration], object with accessors :api_key and :access_token, used for providing auth data in a backward compatible way
+    # @param opts [Hash] Options, currenlty only for providing clinet with the auth data
+    # @yield [Configuration], object with accessors :api_key and :access_token, used for providing auth data in a backward compatible way
     # @return [RMeetup::Client]
     def initialize(opts = {})
       if not(opts.empty?)

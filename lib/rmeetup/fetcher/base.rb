@@ -24,7 +24,7 @@ module RMeetup
 
       # Fetch and parse a response based on a set of options.  Override this method to ensure neccessary options are passed for the request.
       #
-      # @param [Hash] Options for deciding what and how to fetch
+      # @param options [Hash] Options for deciding what and how to fetch
       # @return [RMeetup::Collection] Collection of appropriate entities
       def fetch(options = {})
         raise NotConfiguredError, /fetches only possible with a concrete fetcher/ if @type.nil?
@@ -58,8 +58,9 @@ module RMeetup
       
       # Decides whether to use HTTP or HTTPS. HTTPS is needed if we're authoizing via the :access_token
       #
-      # @param [Hash] Constructed HTTP(S) query
-      # @return [Symbol] :http or :https
+      # @param q [Hash] Constructed HTTP(S) query
+      # @return [Net:HTTP] Constructs an HTTP request if client is given an API key
+      # @return [Net:HTTPS] Constructs an HTTPS request if client is given an access token
       def requester(q)
         if q.has_key?(:api_key)
           http

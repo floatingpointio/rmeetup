@@ -1,4 +1,4 @@
-rmeetup
+rMeetup
 =======
 [![Build Status](https://travis-ci.org/neektza/rmeetup.svg?branch=master)](https://travis-ci.org/neektza/rmeetup)
 [![Code Climate](https://codeclimate.com/github/neektza/rmeetup.png)](https://codeclimate.com/github/neektza/rmeetup)
@@ -16,8 +16,8 @@ Sample code is worth a thousand words:
   client = RMeetup::Client.new do |config|
     config.api_key = "API_KEY"
   end
-
-  results = client.fetch(:events, {:zip => "ZIP_CODE"})
+  
+  results = client.fetch(:events, { event_id: 'some_id' })
   results.each do |result|
     # Do something with the result
   end
@@ -28,14 +28,12 @@ Fetch
 
 RMeetup::Client#fetch takes a data model type and set of options as arguments. Possible data models are:
 
-* :topics
-* :cities
-* :members
-* :rsvps
 * :events
 * :open_events
 * :groups
-* :comments
+* :rsvps
+* :cities
+* :members
 * :photos
 * :venues
 
@@ -53,9 +51,7 @@ The options that may be passed can be found on the Meetup API documentation. Ple
 Installation
 ------------
 
-```
-gem install rmeetup
-```
+... via Rubygems/Bundler.
 
 Credits
 -------
@@ -65,4 +61,4 @@ Credits
 * [Tanner Mares](https://github.com/tannermares/rmeetup) - check for type in base_url, fix event time and venue, also updated to api v2.0
 * [Joshua Calloway](https://github.com/joshuacalloway/rmeetup) - added post functionality and event comment creation
 * [Zishan Ahmad](https://github.com/zishan/rmeetup) - consolidated changes, updated docs
-* [Nikica Jokić](https://github.com/neektza/rmeetup) - thread-safe client refactoring, support for streaming API, setup for TravisCI, CodeClimate, Coveralls...
+* [Nikica Jokić](https://github.com/neektza/rmeetup) - thread-safe client refactoring, setup for TravisCI, CodeClimate, Coveralls...
