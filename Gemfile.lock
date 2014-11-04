@@ -49,6 +49,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.5)
+    markup (0.1.3)
+      rdiscount (>= 1.3.5)
     method_source (0.8.2)
     mime-types (2.2)
     multi_json (1.9.2)
@@ -61,7 +63,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
-    redcarpet (3.2.0)
+    rdiscount (2.1.7.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.14.1)
@@ -98,10 +100,10 @@ DEPENDENCIES
   coveralls
   guard
   guard-rspec
+  markup
   pry
   rMeetup!
   rake
-  redcarpet
   rspec
   rspec-mocks
   simplecov
