@@ -6,51 +6,81 @@ rMeetup
 [![Coverage Status](https://coveralls.io/repos/neektza/rmeetup/badge.png?branch=master)](https://coveralls.io/r/neektza/rmeetup?branch=master)
 [![Inline docs](http://inch-ci.org/github/neektza/rmeetup.svg?branch=master)](http://inch-ci.org/github/neektza/rmeetup)
 
-A Ruby wrapper for the Meetup REST API v2.
+A Ruby wrapper for the Meetup REST API v3
 
-Code Sample
------------
+New API code Sample
+===================
 
-Sample code is worth a thousand words:
+Initializing the client
+-----------------------
 
 ```ruby
-  client = RMeetup::Client.new do |config|
-    config.api_key = "API_KEY"
-  end
-  
-  results = client.fetch(:events, { event_id: 'some_id' })
-  results.each do |result|
-    # Do something with the result
-  end
+client = RMeetup::Client.new(api_key: '...')
 ```
 
-Fetch
------
+Working with events
+-------------------
+```ruby
+# Find one
+client.event(id: '...')
 
-RMeetup::Client#fetch takes a data model type and set of options as arguments. Possible data models are:
+# Find many
+client.events(group_id: '...')
+client.events(member_id: '...')
+client.events(venue_id: '...')
 
-* :events
-* :open_events
-* :groups
-* :rsvps
-* :cities
-* :members
-* :photos
-* :venues
+# When authenticated ...
+event = client.my.events(attending: true).first
 
-The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /2/events" at http://www.meetup.com/meetup_api/docs/2/events/).
+# RSVPing to an event
+event.rsvp(:no)
+event.rsvp(:yes)
 
-Post
-----
+# If admin
+event.members(attending: true)
+event.members(attending: false)
+```
 
-RMeetup::Client#post takes a data model type and set of options as arguments. Possible data models are:
+Working with groups
+-------------------
+```ruby
+# Find one
+client.group(id: '...')
+client.group(urlname: '...')
 
-* :event_comment
+# Find many
+client.groups(ids: '...')
+client.groups(member_id: '...')
+client.groups(organizer_id: '...')
+client.groups(topic: '...')
 
-The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event_comment, look at the API call ```POST /2/event_comment``` at http://www.meetup.com/meetup_api/docs/2/event_comment).
+# Group information
+group = client.group(id: '...')
+group.members # API eqiv => profiles or members
+group.topics
+group.meetups(:past)
+group.meetups(:upcoming)
+
+# When authenticated ...
+group = client.my.groups.first
+
+# Leaving/joining a group
+group.join
+group.leave
+
+# Scheduling a meetup
+group.meetups.schedule(title: '...', description: '...', at: Date.tomorrow)
+```
+
+Working with members
+--------------------
+
+```ruby
+client.member(id: '...')
+```
 
 Installation
-------------
+============
 
 ... via Rubygems/Bundler.
 
