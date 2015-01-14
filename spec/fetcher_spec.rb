@@ -12,7 +12,7 @@ describe RMeetup::Fetcher, 'being told to get a certain type of fetcher' do
     end
   end
   
-  it 'should return nil if asked for an invalid fetcher' do
+  it 'should raise an error if asked for an invalid fetcher' do
     expect { RMeetup::Fetcher.for(:clowns) }.to raise_error
   end
 end
