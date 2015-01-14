@@ -3,9 +3,9 @@ module RMeetup
 
     # == RMeetup::Type::Event
     #
-    # Data wraper for a Event fethcing response
+    # Data wrapper for an Event
     # Used to access result attributes as well
-    # as progammatically fetch relative data types
+    # as programatically fetch relative data types
     # based on this event.
 
     class Event

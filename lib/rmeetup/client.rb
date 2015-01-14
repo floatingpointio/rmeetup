@@ -1,6 +1,7 @@
 require 'rmeetup/errors'
 require 'rmeetup/fetcher'
 require 'rmeetup/poster'
+require 'rmeetup/destroyer'
 
 module RMeetup
 
@@ -45,6 +46,11 @@ module RMeetup
     # Delegates to appropriate RMeetup::Poster
     def post(type, options = {})
       RMeetup::Poster.for(type).post options.merge(auth)
+    end
+
+    # Delegates to appropriate RMeetup::Destroyer
+    def delete(type, id, options = {})
+      RMeetup::Destroyer.for(type, id).delete options.merge(auth)
     end
 
     private

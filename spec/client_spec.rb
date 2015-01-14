@@ -39,6 +39,16 @@ describe RMeetup::Client do
         end
       end
 
+      context 'when fetching :open_events' do
+        it 'returns a collection of Events' do
+          VCR.use_cassette('fetching_open_events') do
+            client.fetch(:open_events, {country: 'US', :zip=>"95120", :state=>"CA"}).each do |result|
+              result.should be_kind_of(RMeetup::Type::Event)
+            end
+          end
+        end
+      end
+
       context 'when fetching :rsvps' do
         it 'returns a collection of RSVPs' do
           VCR.use_cassette('fetching_rsvps') do

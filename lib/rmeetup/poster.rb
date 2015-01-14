@@ -1,4 +1,5 @@
 require "rmeetup/poster/base"
+require "rmeetup/poster/event"
 require "rmeetup/poster/event_comment"
 
 module RMeetup
@@ -9,7 +10,7 @@ module RMeetup
       if (name && constants.include?(name))
         const_get(name).new
       else
-        raise InvalidRequestTypeError.new(type)
+        raise RMeetup::Error::InvalidRequestTypeError.new(type)
       end
     end 
 

@@ -8,6 +8,7 @@ require 'rmeetup/fetcher/open_events'
 require 'rmeetup/fetcher/groups'
 require 'rmeetup/fetcher/photos'
 require 'rmeetup/fetcher/venues'
+require 'rmeetup/fetcher/open_venues'
 
 module RMeetup
   module Fetcher
