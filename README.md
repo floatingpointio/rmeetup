@@ -23,7 +23,11 @@ Sample code is worth a thousand words:
     # Do something with the result
   end
   
-  event = client.post(:event, {:group_id => 'some_group_id', :group_urlname => 'some_group_urlname', :name => 'My Event'})
+  event = client.post(:event, {:group_id => 'some_group_id',
+                               :group_urlname => 'some_group_urlname',
+                               :name => 'My Event'})
+  
+  client.delete(:event, 'event_id)  # May throw exceptions or returns true
 ```
 
 Fetch
@@ -52,6 +56,18 @@ RMeetup::Client#post takes a data model type and set of options as arguments. Po
 
 The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event, look at the API call ```POST /2/event``` at http://www.meetup.com/meetup_api/docs/2/event).
 
+
+Delete
+------
+
+RMeetup::Client#delete takes a data model type, object's id and set of options as arguments. Possible data models are:
+
+* :event
+* :event_comment
+* :member_photo
+* :photo
+
+
 Installation
 ------------
 
@@ -66,3 +82,4 @@ Credits
 * [Joshua Calloway](https://github.com/joshuacalloway/rmeetup) - added post functionality and event comment creation
 * [Zishan Ahmad](https://github.com/zishan/rmeetup) - consolidated changes, updated docs
 * [Nikica Jokić](https://github.com/neektza/rmeetup) - thread-safe client refactoring, setup for TravisCI, CodeClimate, Coveralls...
+* [Emin Bugra Saral](https://github.com/eminbugrasaral/rmeetup) - added delete functionality along with several data models, added event creation.
