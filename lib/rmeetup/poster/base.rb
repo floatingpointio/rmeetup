@@ -14,14 +14,20 @@ module RMeetup
         super "No Response was returned from the Meetup API."
       end
     end
-    
-    # == RMeetup::Fetcher::Base
+
+    module ResponseType
+      BASIC_RESPONSE = 1
+      OBJECT = 2
+    end
+
+    # == RMeetup::Poster::Base
     # 
-    # Base fetcher class that other fetchers 
+    # Base poster class that other posters
     # will inherit from.
     class Base
       def initialize
         @type = nil
+        @response_type = ResponseType::BASIC_RESPONSE
       end
       
       # Fetch and parse a response
@@ -30,9 +36,28 @@ module RMeetup
       # neccessary options are passed
       # for the request.
       def post(options = {})
+        raise NotConfiguredError, /posts only possible with a concrete type/ if @type.nil?
+
         url = build_url(options)
-        ret = post_response(url, options)
-        ret
+        res = post_response(url, options)
+        response_body = res.body
+        data = JSON.parse(response_body)
+
+        unless res.is_a?(Net::HTTPSuccess)
+          # Check to see if the api returned an error
+          if data.has_key?('problem')
+            raise ApiError.new(data['details'], url)
+          else
+            raise NoResponseError.new
+          end
+        end
+
+        case @response_type
+          when ResponseType::OBJECT
+            format_result(data)
+          else
+            res
+        end
       end
       
       protected
@@ -70,11 +95,12 @@ module RMeetup
         
         def post_response(url, options)
           sslurl = URI.parse(url)
+
           https = Net::HTTP.new(sslurl.host, sslurl.port)
           https.use_ssl = true
           req = Net::HTTP::Post.new(sslurl.path)
           req.set_form_data(options)
-          resp = https.request(req)
+          res = https.request(req)
         end
     end
   end
