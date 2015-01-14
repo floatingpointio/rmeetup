@@ -3,6 +3,7 @@ module RMeetup
     class EventComment < Base
       def initialize
         @type = :event_comment
+        @response_type = ResponseType::BASIC_RESPONSE
       end
       
       # Turn the result hash into a Comment Class
