@@ -22,6 +22,8 @@ Sample code is worth a thousand words:
   results.each do |result|
     # Do something with the result
   end
+  
+  event = client.post(:event, {:group_id => 'some_group_id', :group_urlname => 'some_group_urlname', :name => 'My Event'})
 ```
 
 Fetch
@@ -45,9 +47,10 @@ Post
 
 RMeetup::Client#post takes a data model type and set of options as arguments. Possible data models are:
 
+* :event
 * :event_comment
 
-The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event_comment, look at the API call ```POST /2/event_comment``` at http://www.meetup.com/meetup_api/docs/2/event_comment).
+The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event, look at the API call ```POST /2/event``` at http://www.meetup.com/meetup_api/docs/2/event).
 
 Installation
 ------------
