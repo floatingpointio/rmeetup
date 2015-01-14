@@ -43,6 +43,7 @@ RMeetup::Client#fetch takes a data model type and set of options as arguments. P
 * :members
 * :photos
 * :venues
+* :open_venues
 
 The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /2/events" at http://www.meetup.com/meetup_api/docs/2/events/).
 
@@ -82,4 +83,4 @@ Credits
 * [Joshua Calloway](https://github.com/joshuacalloway/rmeetup) - added post functionality and event comment creation
 * [Zishan Ahmad](https://github.com/zishan/rmeetup) - consolidated changes, updated docs
 * [Nikica Jokić](https://github.com/neektza/rmeetup) - thread-safe client refactoring, setup for TravisCI, CodeClimate, Coveralls...
-* [Emin Bugra Saral](https://github.com/eminbugrasaral/rmeetup) - added delete functionality along with several data models, added event creation.
+* [Emin Bugra Saral](https://github.com/eminbugrasaral/rmeetup) - added delete functionality along with several data models, added event creation
