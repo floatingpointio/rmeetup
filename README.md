@@ -27,7 +27,7 @@ Sample code is worth a thousand words:
                                :group_urlname => 'some_group_urlname',
                                :name => 'My Event'})
   
-  client.delete(:event, 'event_id)  # May throw exceptions or returns true
+  client.delete(:event, 'event_id')  # May throw exceptions or returns true
 ```
 
 Fetch
