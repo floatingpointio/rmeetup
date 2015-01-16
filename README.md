@@ -68,6 +68,7 @@ RMeetup::Client#delete takes a data model type, object's id and set of options a
 * :member_photo
 * :photo
 
+Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :event, look at the API call ```DELETE /2/event``` at http://www.meetup.com/meetup_api/docs/2/event)
 
 Installation
 ------------
