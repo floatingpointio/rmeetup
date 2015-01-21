@@ -1,3 +1,7 @@
+2.1.0
+-----
+* [Support for deletion and posting new events](https://github.com/neektza/rmeetup/commit/38712057a0beb5cd3835e741d94609ff9225c1fe)
+
 2.0.1
 -----
 * [Documentation updates](https://github.com/neektza/rmeetup/commit/9d17dfa1150b017f702901d7cbcbb3a1132a6a31)
